@@ -1,0 +1,20 @@
+version: '3'
+
+networks:
+
+  default:
+
+services:
+
+  php:
+    build:
+      context: ../
+      dockerfile: ./docker/php/Dockerfile
+    container_name: csc_php
+    networks:
+      - default
+    ports:
+      - '80:80'
+    restart: unless-stopped
+    volumes:
+      - ../src/:/var/www/html/
