@@ -1,3 +1,9 @@
+init:
+	@cp .env.example .env
+	@docker exec -u 1000 csc_php composer install
+	@docker exec csc_php php artisan key:generate
+	@make permissions
+
 install:
 	@docker exec -u 1000 csc_php composer install
 	@docker exec csc_php php artisan key:generate
@@ -25,6 +31,9 @@ clear:
 
 php:
 	@docker exec -it -u 1000 csc_php bash
+
+test:
+	@docker exec -it -u 1000 csc_php php artisan test
 
 tinker:
 	@docker exec -it csc_php bash -c "while true; do php artisan tinker; done"
