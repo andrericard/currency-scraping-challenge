@@ -14,6 +14,11 @@ class CurrencyService
      */
     private CurrencyCrawler $currencyCrawler;
 
+    /**
+     * CurrencyService constructor.
+     *
+     * @param  CurrencyCrawler  $currencyCrawler
+     */
     public function __construct(CurrencyCrawler $currencyCrawler)
     {
         $this->currencyCrawler = $currencyCrawler;
