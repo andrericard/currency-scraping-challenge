@@ -27,7 +27,7 @@ A aplicação deverá rodar no seguinte endereço: [http://localhost:8384/api/cu
 
 No endpoint [GET] [http://localhost:8384/api/currencies](http://localhost:8384/api/currencies) é possível filtrar as moedas pelo código alfabético ou numérico.
 
-O filtro pode ser declado via parêmetro:
+O filtro pode ser declarado via parêmetro:
 ```
 [GET] http://localhost:8384/api/currencies?filters[]=brl&filters[]=124
 ```
@@ -38,6 +38,8 @@ Também pode ser declarado no corpo da requisição:
     "filters": ["brl", 124, "USD", "392"]
 }
 ```
+
+> O ```filters``` é declarado como array, mesmo que tenha uma única moeda para pesquisa.
 
 ## Testando
 
